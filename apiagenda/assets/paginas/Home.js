@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity, FlatList, Alert } from 'react-native';
-import { visualizarContatos } from './ModelContato';
+import { visualizarTodosContatos } from './ModelContato';
 
-export default function Home() {
+export default function Home({ navigation }) {
   const [dadosContatos, setDadosContatos] = useState([]);
 
   async function buscarContatos() {
@@ -23,11 +23,11 @@ export default function Home() {
 
 
   return (
-    <View style={styles.container}>
-      <Text>Contatos</Text>
+    <View style={estilo.container}>
+      <Text style={estilo.titulo}>Contatos</Text>
 
-      <TouchableOpacity style={estilo.botaoCadastrar}>
-        <text style={estilo.botaoTextCadastrar}>Cadastrar Contato</text>
+      <TouchableOpacity style={estilo.botaoCadastrar} onPress={() => navigation.navigate('cadastrarContato')}>
+        <Text style={estilo.textCadastrar}>Cadastrar</Text>
       </TouchableOpacity>
 
       <StatusBar style="auto" />
@@ -51,36 +51,33 @@ export default function Home() {
 const estilo = StyleSheet.create({
   container: {
     flex: 1,
-    height: responsiveHeight(50),
-    width: responsiveWidth(50),
+    backgroundColor: '#00CED1',
   },
-  botaoTextCadastrar: {
-    margin: 10,
-    padding: 10,
-    backgroundColor: 'white',
-    borderRadius: 10,
+  botaoCadastrar: {
+    margin: 5,
+    padding: 5,
+    backgroundColor: 'black',
+    borderRadius: 50,
+    fontSize: 20,
+    color: 'white',
     textAlign: 'center',
-    height: responsiveHeight(8),
-    width: responsiveWidth(42),
-    shadowColor: '#470000',
-    shadowOffset: { width: 3, height: 3 },
-    shadowOpacity: 0.2,
-    elevation: 1,
-    left: 8,
+    left: 100,
+    width: 180,
+    height: 50,
   },
-  botaoTextoDados: {
-    margin: 10,
-    padding: 10,
-    backgroundColor: 'white',
-    borderRadius: 10,
-    textAlign: 'left',
-    height: responsiveHeight(6),
-    width: responsiveWidth(90),
-    shadowColor: '#470000',
-    shadowOffset: { width: 3, height: 3 },
-    shadowOpacity: 0.2,
-    elevation: 1,
-    left: 8,
+  textCadastrar: {
+    textAlign: 'center',
+    fontSize: 25,
+    color: 'white',
   },
+  titulo: {
+    textAlign: 'center',
+    top: 125,
+    fontSize: 50,
+    backgroundColor: '#00FFFF',
+    borderRadius: 50,
+    width: 300,
+    left: 45,
+  }
 });
 

@@ -1,19 +1,22 @@
 {
-  "posts": [
+  "contatos":[
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "id":1,
+      "Nome": "Bill",
+      "Fone": "1111-111-111111",
+      "Email": "gggertfgertg@hotmail.com"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id":2,
+      "Nome": "Steve",
+      "Fone": "1111-111-111111",
+      "Email": "gtertggg@hotmail.com"
+    },
+    {
+      "id":3,
+      "Nome": "James",
+      "Fone": "1111-111-111111",
+      "Email": "gggdfgg@hotmail.com"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

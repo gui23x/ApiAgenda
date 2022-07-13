@@ -1,21 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
-import { NavigationConteiner } from '@react-navigation/native';
 import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 const navegacao = createNativeStackNavigator();
 
 import Home from  '../paginas/Home';
-import Cadastro from '../paginas/Cadastro';
+import cadastrarContato from  '../paginas/CadastroContato';
 
 export default function Rotas() {
     return (
-    <NavigationConteiner>
-        <nav.Navigator>
-            <nav.Screen name="Home" component={Home}/>
-            <nav.Screen name="Cadastro" component={Cadastro}/>
-        </nav.Navigator>
-    </NavigationConteiner>
+        <NavigationContainer>
+        <navegacao.Navigator>
+            <navegacao.Screen name="Home" component={Home}/>
+            <navegacao.Screen name="cadastrarContato" component={cadastrarContato}/>
+        </navegacao.Navigator>
+        </NavigationContainer>
   );
 }
