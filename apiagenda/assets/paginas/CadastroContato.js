@@ -6,20 +6,20 @@ import { visualizarTodosContatos } from './ModelContato';
 export default function CadastrarContatos({navigation}) {
    return(
        <View style={estilo.container}>
-       <TextInput
+       <TextInput style={estilo.texto}
            placeholder= "Digite o código do Contato"
        />
-       <TextInput
+       <TextInput style={estilo.texto}
            placeholder='Digite o Nome do Contato'
        />
-       <TextInput
+       <TextInput style={estilo.texto}
            placeholder='Digite o Telefone do Contato'
        />
-       <TextInput
+       <TextInput style={estilo.texto}
            placeholder='Digite o E-mail do Contato'
        />
        <TouchableOpacity style={estilo.botao}>
-           <Text>Salvar Contatos </Text>
+           <Text style={estilo.titulobotao}>Salvar</Text>
        </TouchableOpacity>
        </View>
    );
@@ -31,20 +31,32 @@ const estilo = StyleSheet.create({
         backgroundColor: '#00CED1',
     },
     texto:{
-
+        marginLeft:30,
+        fontSize: 20,
+        padding:10,
+        marginTop:35,
+        borderColor: 'black',
+        borderRadius: 20,
+        backgroundColor: 'white',
+        color: 'black',
+        width: 340,
     },
     botao:{
-        margin: 5,
-        padding: 5,
+        marginTop :50,
         backgroundColor: 'black',
         borderRadius: 50,
-        fontSize: 20,
-        color: 'white',
-        textAlign: 'center',
         left: 100,
         width: 180,
         height: 50,
-        top: 150,
+        textAlign: 'center',
+        fontSize: 20,
     },
+    titulobotao:{
+        textAlign: 'center',
+        top: 10,
+        fontSize: 20,
+        color: 'white',
+        
+    }
 
 });

@@ -23,7 +23,7 @@ export async function visualizarTodosContatos() {
 
     try {
 
-        const resultados = await Api.get(`/contatos/${id}/`);
+        const resultados = await Api.get(`/contatos`);
 
         return resultados.data;
 
